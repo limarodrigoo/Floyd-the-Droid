@@ -20,11 +20,17 @@ import math
 import time
 import wave
 import cv2
+import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
+API_KEY = os.getenv("OPENAI_API_KEY")
 
 import sys
 sys.path.append("/home/pi/MasterPi/HiwonderSDK/")
-import Board
+from board import Board
 
 
 import pyaudio
@@ -77,7 +83,7 @@ TTS_speed = "1.1"
 
 
 from openai import OpenAI
-api_key = "sk-BlahBlahBlahBlahBlahBlahBlahBlah" #Insert API key here
+api_key = API_KEY #Insert API key here
 openai_api = OpenAI(api_key=api_key)
 
 
